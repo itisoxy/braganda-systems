@@ -81,7 +81,7 @@
             const active = isActive(l.href) || isActivePrefix(l.href);
             return `
             <li class="nav-item-dropdown">
-              <button class="nav-dropdown-trigger" data-href="${l.href}" aria-expanded="false" aria-haspopup="true"${active ? ' aria-current="page"' : ''}>
+              <button class="nav-dropdown-trigger nav-highlight" data-href="${l.href}" aria-expanded="false" aria-haspopup="true"${active ? ' aria-current="page"' : ''}>
                 ${l.label}
                 <svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>

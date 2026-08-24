@@ -389,6 +389,7 @@ footer { background: #060606; color: var(--white); padding: 72px 0 40px; border-
 /* ─── NAV DROPDOWN / MEGA MENU ────────────────── */
 .nav-item-dropdown { position: relative; }
 .nav-dropdown-trigger { display: flex; align-items: center; gap: 5px; background: none; border: none; cursor: pointer; font: inherit; padding: 0; color: var(--black); }
+.nav-highlight { color: var(--orange); }
 .nav-dropdown-trigger svg { width: 9px; height: 9px; transition: transform 0.2s; }
 .nav-item-dropdown:hover .nav-dropdown-trigger svg,
 .nav-item-dropdown:focus-within .nav-dropdown-trigger svg { transform: rotate(180deg); }
