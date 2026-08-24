@@ -189,6 +189,28 @@
   }
 
   /* ── Blog category pills ── */
+  /* ── ARTICLE TABLE OF CONTENTS (auto-built from <h2>s) ── */
+  document.querySelectorAll('[data-toc]').forEach(tocList => {
+    const content = document.querySelector('.article-content');
+    const wrapper = tocList.closest('.sidebar-toc');
+    if (!content) { if (wrapper) wrapper.style.display = 'none'; return; }
+    const headings = content.querySelectorAll('h2');
+    if (!headings.length) { if (wrapper) wrapper.style.display = 'none'; return; }
+    headings.forEach((h, i) => {
+      if (!h.id) {
+        const slug = h.textContent.toLowerCase().trim()
+          .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').slice(0, 60);
+        h.id = slug || ('section-' + i);
+      }
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  });
+
   document.querySelectorAll('.cat-pill').forEach(pill => {
     pill.addEventListener('click', () => {
       document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
