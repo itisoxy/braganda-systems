@@ -169,6 +169,7 @@
         <div class="footer-insights-col">
           <a class="footer-insights-heading" href="/insights/revenue-automation/">Revenue Automation</a>
           <ul class="footer-links">
+            <li><a href="/insights/speed-to-lead-automation-respond-while-intent-is-still-hot/">Speed-to-Lead Automation</a></li>
             <li><a href="/insights/crm-database-reactivation/">Database Reactivation</a></li>
             <li><a href="/insights/automated-sales-follow-up/">Automated Sales Follow-Up</a></li>
           </ul>
@@ -186,6 +187,9 @@
         <div class="footer-insights-col">
           <a class="footer-insights-heading" href="/insights/n8n/">n8n Builds</a>
           <ul class="footer-links">
+            <li><a href="/insights/n8n-plus-zoho-crm-a-practical-revenue-automation-stack/">n8n + Zoho CRM</a></li>
+            <li><a href="/insights/n8n-plus-salesforce-build-flexible-automation-around-your-crm/">n8n + Salesforce</a></li>
+            <li><a href="/insights/n8n-plus-hubspot-connect-marketing-sales-and-ai-workflows/">n8n + HubSpot</a></li>
           </ul>
           <a class="footer-insights-viewall" href="/insights/n8n/">View n8n Builds →</a>
         </div>
