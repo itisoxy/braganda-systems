@@ -160,6 +160,9 @@
         <div class="footer-insights-col">
           <a class="footer-insights-heading" href="/insights/ai-gtm/">AI GTM</a>
           <ul class="footer-links">
+            <li><a href="/insights/what-is-an-ai-gtm-system-a-practical-guide-for-growing-teams/">What Is an AI GTM System?</a></li>
+            <li><a href="/insights/how-to-build-an-ai-sdr-without-building-a-spam-machine/">How to Build an AI SDR</a></li>
+            <li><a href="/insights/ai-lead-qualification-score-faster-without-throwing-away-good-leads/">AI Lead Qualification</a></li>
           </ul>
           <a class="footer-insights-viewall" href="/insights/ai-gtm/">View AI GTM →</a>
         </div>

@@ -153,6 +153,42 @@
 
   <!-- Insights: articles -->
   <url>
+    <loc>https://braganda.systems/insights/what-is-an-ai-gtm-system-a-practical-guide-for-growing-teams/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://braganda.systems/insights/how-to-build-an-ai-sdr-without-building-a-spam-machine/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://braganda.systems/insights/ai-sdr-vs-human-sdr-where-each-one-actually-wins/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://braganda.systems/insights/ai-lead-qualification-score-faster-without-throwing-away-good-leads/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://braganda.systems/insights/ai-account-research-give-reps-context-before-the-call/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://braganda.systems/insights/ai-outbound-automation-from-list-building-to-relevant-conversations/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://braganda.systems/insights/the-practical-guide-to-ai-automation-for-smes-in-2026/</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
