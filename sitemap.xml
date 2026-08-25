@@ -27,8 +27,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://braganda.systems/blog/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <loc>https://braganda.systems/insights/</loc>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -113,48 +113,86 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Blog articles -->
+  <!-- Insights: category hub pages -->
   <url>
-    <loc>https://braganda.systems/blog/losing-deals-first-5-minutes/</loc>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <loc>https://braganda.systems/insights/ai-gtm/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://braganda.systems/blog/practical-guide-ai-automation-smes/</loc>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <loc>https://braganda.systems/insights/revenue-automation/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://braganda.systems/blog/outgrown-manual-processes/</loc>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <loc>https://braganda.systems/insights/ai-automation/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://braganda.systems/blog/what-is-ai-os/</loc>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <loc>https://braganda.systems/insights/n8n/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://braganda.systems/blog/database-reactivation-revenue/</loc>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <loc>https://braganda.systems/insights/gtm-architecture/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://braganda.systems/blog/document-processing-ai/</loc>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <loc>https://braganda.systems/insights/operations/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Insights: articles -->
+  <url>
+    <loc>https://braganda.systems/insights/the-practical-guide-to-ai-automation-for-smes-in-2026/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://braganda.systems/blog/follow-up-sequences-that-convert/</loc>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <loc>https://braganda.systems/insights/5-signs-your-business-has-outgrown-manual-processes/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://braganda.systems/insights/what-ai-operating-system-actually-is/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://braganda.systems/insights/crm-database-reactivation/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://braganda.systems/insights/document-chaos-how-ai-is-changing-back-office-operations/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://braganda.systems/insights/automated-sales-follow-up/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://braganda.systems/insights/losing-deals-first-5-minutes/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
 
 </urlset>

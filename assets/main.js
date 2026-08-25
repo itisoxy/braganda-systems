@@ -5,21 +5,32 @@
 
 (function () {
   /* ── NAV DATA ── */
-  const solutionsMenu = [
+  const gtmSystemsMenu = [
     {
-      label: 'AI GTM Systems',
+      label: 'Find & Convert',
       href: '/solutions/ai-gtm/',
       links: [
+        { label: 'AI GTM Systems', href: '/solutions/ai-gtm/' },
         { label: 'AI Outbound Engine', href: '/solutions/ai-outbound/' },
-        { label: 'GTM Intelligence & Enrichment', href: '/solutions/gtm-intelligence/' },
+        { label: 'GTM Intelligence', href: '/solutions/gtm-intelligence/' },
         { label: 'Speed-to-Lead', href: '/solutions/speed-to-lead/' },
-        { label: 'Lead Scoring & Routing', href: '/solutions/ai-gtm/#lead-scoring-routing' },
-        { label: 'Follow-Up & Nurture', href: '/solutions/follow-up-nurture/' },
-        { label: 'Database Reactivation', href: '/solutions/database-reactivation/' },
-        { label: 'CRM & RevOps Automation', href: '/solutions/crm-revops/' },
-        { label: 'Pipeline Reporting & Attribution', href: '/solutions/crm-revops/#pipeline-reporting' },
+        { label: 'Lead Qualification & Routing', href: '/solutions/ai-gtm/#lead-scoring-routing' },
       ],
     },
+    {
+      label: 'Manage & Scale',
+      href: '/solutions/crm-revops/',
+      links: [
+        { label: 'Lead Enrichment', href: '/solutions/gtm-intelligence/' },
+        { label: 'Database Reactivation', href: '/solutions/database-reactivation/' },
+        { label: 'Follow-Up & Nurture', href: '/solutions/follow-up-nurture/' },
+        { label: 'CRM & RevOps', href: '/solutions/crm-revops/' },
+        { label: 'GTM Architecture', href: '/insights/gtm-architecture/' },
+      ],
+    },
+  ];
+
+  const aiAutomationMenu = [
     {
       label: 'AI Automation',
       href: '/solutions/ai-automation/',
@@ -46,12 +57,22 @@
     },
   ];
 
+  // Insights mega-menu is a distinct shape (pillar cards with descriptions, not link lists)
+  const insightsPillars = [
+    { label: 'AI GTM', href: '/insights/ai-gtm/', description: 'AI-powered systems for finding, qualifying and converting opportunities.' },
+    { label: 'Revenue Automation', href: '/insights/revenue-automation/', description: 'Automating the processes between enquiry and revenue.' },
+    { label: 'AI Automation', href: '/insights/ai-automation/', description: 'Practical AI workflows for growing businesses.' },
+    { label: 'n8n Builds', href: '/insights/n8n/', description: 'Hands-on automation builds, integrations and architectures.' },
+    { label: 'GTM Architecture', href: '/insights/gtm-architecture/', description: 'CRM, data, enrichment and GTM technology.' },
+    { label: 'Operations', href: '/insights/operations/', description: 'Better systems and processes for growing businesses.' },
+  ];
+
   const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Solutions', href: '/solutions/', dropdown: solutionsMenu },
+    { label: 'GTM Systems', href: '/solutions/ai-gtm/', dropdown: gtmSystemsMenu },
+    { label: 'AI Automation', href: '/solutions/ai-automation/', dropdown: aiAutomationMenu },
     { label: 'How We Work', href: '/services/' },
     { label: 'Case Studies', href: '/case-studies/' },
-    { label: 'Insights', href: '/blog/' },
+    { label: 'Insights', href: '/insights/', insightsDropdown: insightsPillars },
     { label: 'About', href: '/about/' },
   ];
 
@@ -60,7 +81,7 @@
   const isActivePrefix = (href) => href !== '/' && currentPath.indexOf(href.replace(/\/$/, '')) === 0;
 
   const megaMenuHTML = (cols) => `
-    <div class="nav-megamenu" role="menu">
+    <div class="nav-megamenu${cols.length === 2 ? ' nav-megamenu-2col' : ''}" role="menu">
       ${cols.map(col => `
         <div class="megamenu-col">
           <div class="megamenu-col-label">${col.label}</div>
@@ -71,28 +92,40 @@
       `).join('')}
     </div>`;
 
+  const insightsMenuHTML = (pillars) => `
+    <div class="nav-megamenu nav-megamenu-insights" role="menu">
+      ${pillars.map(p => `
+        <a class="insights-pillar-tile" href="${p.href}" role="menuitem">
+          <div class="insights-pillar-tile-label">${p.label}</div>
+          <p>${p.description}</p>
+        </a>
+      `).join('')}
+      <a class="insights-view-all" href="/insights/" role="menuitem">View All Insights →</a>
+    </div>`;
+
   const navHTML = `
   <nav role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a class="nav-logo" href="/" aria-label="Braganda Systems Home">BRAGANDA<span>.</span>SYSTEMS</a>
       <ul class="nav-links" id="nav-links">
         ${navLinks.map(l => {
-          if (l.dropdown) {
+          if (l.dropdown || l.insightsDropdown) {
             const active = isActive(l.href) || isActivePrefix(l.href);
+            const menu = l.dropdown ? megaMenuHTML(l.dropdown) : insightsMenuHTML(l.insightsDropdown);
             return `
             <li class="nav-item-dropdown">
               <button class="nav-dropdown-trigger nav-highlight" data-href="${l.href}" aria-expanded="false" aria-haspopup="true"${active ? ' aria-current="page"' : ''}>
                 ${l.label}
                 <svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              ${megaMenuHTML(l.dropdown)}
+              ${menu}
             </li>`;
           }
           return `<li><a href="${l.href}"${isActive(l.href) ? ' aria-current="page"' : ''}>${l.label}</a></li>`;
         }).join('')}
       </ul>
       <div class="nav-cta">
-        <a class="btn btn-orange btn-sm" href="/contact/">Book a Call →</a>
+        <a class="btn btn-orange btn-sm" href="/contact/">Book an Audit →</a>
       </div>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
@@ -100,48 +133,74 @@
     </div>
   </nav>`;
 
-  /* ── FOOTER (no phone — email only) ── */
+  /* ── FOOTER (no phone — email only; Insights directory architecture) ── */
   const footerHTML = `
   <footer role="contentinfo">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-grid footer-grid-main">
         <div class="footer-brand">
           <a class="nav-logo" href="/">BRAGANDA<span>.</span>SYSTEMS</a>
           <p>AI GTM Systems, AI Automation and Custom AI Systems that generate pipeline, improve conversion and remove manual work.</p>
-          <a class="btn btn-orange btn-sm" href="/contact/">Book a Systems Call →</a>
+          <a class="btn btn-orange btn-sm" href="/contact/">Book an Audit →</a>
         </div>
         <div class="footer-col">
-          <h5>AI GTM Systems</h5>
           <ul class="footer-links">
-            <li><a href="/solutions/ai-outbound/">AI Outbound Engine</a></li>
-            <li><a href="/solutions/gtm-intelligence/">GTM Intelligence</a></li>
-            <li><a href="/solutions/speed-to-lead/">Speed-to-Lead</a></li>
-            <li><a href="/solutions/database-reactivation/">Database Reactivation</a></li>
-            <li><a href="/solutions/crm-revops/">CRM &amp; RevOps</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Automation &amp; Custom AI</h5>
-          <ul class="footer-links">
+            <li><a href="/solutions/ai-gtm/">GTM Systems</a></li>
             <li><a href="/solutions/ai-automation/">AI Automation</a></li>
-            <li><a href="/solutions/document-processing/">Document Processing</a></li>
-            <li><a href="/solutions/custom-ai/">Custom AI Systems</a></li>
-            <li><a href="/solutions/ai-os/">AI-OS</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul class="footer-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/solutions/">Solutions</a></li>
             <li><a href="/services/">How We Work</a></li>
             <li><a href="/case-studies/">Case Studies</a></li>
-            <li><a href="/blog/">Insights</a></li>
+            <li><a href="/insights/">Insights</a></li>
             <li><a href="/about/">About</a></li>
-            <li><a href="/contact/">Book a Call</a></li>
+            <li><a href="/contact/">Book an Audit</a></li>
           </ul>
         </div>
       </div>
+
+      <div class="footer-insights-directory">
+        <div class="footer-insights-col">
+          <a class="footer-insights-heading" href="/insights/ai-gtm/">AI GTM</a>
+          <ul class="footer-links">
+          </ul>
+          <a class="footer-insights-viewall" href="/insights/ai-gtm/">View AI GTM →</a>
+        </div>
+        <div class="footer-insights-col">
+          <a class="footer-insights-heading" href="/insights/revenue-automation/">Revenue Automation</a>
+          <ul class="footer-links">
+            <li><a href="/insights/crm-database-reactivation/">Database Reactivation</a></li>
+            <li><a href="/insights/automated-sales-follow-up/">Automated Sales Follow-Up</a></li>
+          </ul>
+          <a class="footer-insights-viewall" href="/insights/revenue-automation/">View Revenue Automation →</a>
+        </div>
+        <div class="footer-insights-col">
+          <a class="footer-insights-heading" href="/insights/ai-automation/">AI Automation</a>
+          <ul class="footer-links">
+            <li><a href="/insights/the-practical-guide-to-ai-automation-for-smes-in-2026/">Practical Guide to AI Automation</a></li>
+            <li><a href="/insights/what-ai-operating-system-actually-is/">What AI-OS Actually Is</a></li>
+            <li><a href="/insights/document-chaos-how-ai-is-changing-back-office-operations/">Document Chaos</a></li>
+          </ul>
+          <a class="footer-insights-viewall" href="/insights/ai-automation/">View AI Automation →</a>
+        </div>
+        <div class="footer-insights-col">
+          <a class="footer-insights-heading" href="/insights/n8n/">n8n Builds</a>
+          <ul class="footer-links">
+          </ul>
+          <a class="footer-insights-viewall" href="/insights/n8n/">View n8n Builds →</a>
+        </div>
+        <div class="footer-insights-col">
+          <a class="footer-insights-heading" href="/insights/gtm-architecture/">GTM Architecture</a>
+          <ul class="footer-links">
+          </ul>
+          <a class="footer-insights-viewall" href="/insights/gtm-architecture/">View GTM Architecture →</a>
+        </div>
+        <div class="footer-insights-col">
+          <a class="footer-insights-heading" href="/insights/operations/">Operations</a>
+          <ul class="footer-links">
+            <li><a href="/insights/5-signs-your-business-has-outgrown-manual-processes/">5 Signs You've Outgrown Manual Processes</a></li>
+          </ul>
+          <a class="footer-insights-viewall" href="/insights/operations/">View Operations →</a>
+        </div>
+      </div>
+
       <p style="font-size:11px;color:var(--grey-label);margin-top:32px;line-height:1.6;max-width:820px;">All product names, logos and brands referenced on this site are property of their respective owners. Their use does not imply endorsement or partnership.</p>
       <div class="footer-bottom">
         <span>© 2025 Braganda Systems Ltd. All rights reserved.</span>
